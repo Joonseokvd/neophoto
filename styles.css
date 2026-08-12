@@ -1,0 +1,274 @@
+/* === 기본 스타일 초기화 === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* 리스트 스타일 초기화 (점 제거) */
+ul, ol, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* === 전체 페이지 기본 스타일 === */
+body {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: gray;
+    background-color: white;
+    line-height: 1.4;
+    word-break: break-word;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: gray;
+    /* line-height는 body에서 상속 */
+    line-height: inherit; /* ★ 정리 */
+    word-break: break-word;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* ★ 모든 텍스트 공통: 줄간격은 상속만 (헤딩/strong 제외) */
+p, span, div, li, a {
+    font-size: 16px;
+    line-height: inherit;  /* ★ !important 제거 & 상속 */
+    color: inherit;        /* ★ h1의 검정색을 덮어쓰지 않도록 상속 */
+}
+
+/* 강조 텍스트 & 서브헤딩 - 줄간격 건드리지 않음 */
+strong { font-weight: 900; }       /* ★ h1과의 중복 제거 */
+h2 { font-weight: 900; }           /* ★ 필요 시 굵기만 지정 */
+
+/* === 네비게이션 스타일 === */
+nav {
+    font-weight: 400;
+    font-size: 16px;
+    color: gray;
+    line-height: 1.4;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    text-align: left;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 400;
+    color: gray;
+    line-height: 1.4;
+    display: block;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* === 메인 페이지 스타일 === */
+.intro {
+    max-width: 600px;
+    min-width: 200px;
+    margin: 40px 0 0 20px;
+    text-align: left;
+    /* line-height는 상속 */
+    line-height: inherit; /* ★ 정리 */
+    word-break: keep-all;
+}
+
+/* 강조 스타일 */
+.highlight {
+    font-weight: 900;
+}
+
+/* === CV 페이지 스타일 === */
+.cv {
+    max-width: 600px;
+    margin: 40px 0 0 20px;
+    text-align: left;
+}
+
+.cv ul { /* CV 페이지에서 점 제거 */
+    list-style: none;
+    padding-left: 0;
+}
+
+.cv h2 {
+    margin-top: 40px;
+    font-weight: 900;
+}
+
+.cv .year {
+    margin-left: 20px;
+}
+
+.cv .details {
+    margin-left: 40px;
+    font-weight: 400;
+}
+
+/* === Work 페이지 스타일 === */
+.work {
+    padding: 40px 20px;
+}
+
+/* 네비게이션 높이 고려하여 마진 추가 */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 이미지 크기 확대 */
+    gap: 10px;
+    justify-content: start; /* 왼쪽 정렬 */
+    max-width: calc(100% - 250px); /* 네비게이션 공간 확보 */
+    margin-left: 0; /* 왼쪽 끝에 붙이기 */
+    margin-top: 80px; /* 네비게이션 높이만큼 띄우기 */
+}
+
+/* 이미지 스타일 */
+.work-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* === 상세 페이지 스타일 === */
+.work-detail {
+    padding: 180px 20px;
+    max-width: 60vw; /* 기존보다 조금 넓게 */
+    align: left;
+    margin: auto;
+    text-align: left;
+}
+
+.work-title {
+    position: absolute;
+    top: 80px;  /* 페이지 상단에서 60px 떨어진 위치 */
+    left: 20px; /* 왼쪽에서 20px 떨어진 위치 */
+    font-weight: 900;
+    font-size: 16px;
+    /* line-height 상속 */
+    line-height: inherit; /* ★ 정리 */
+    word-break: keep-all;
+}
+
+/* 본문 독립적 배치 */
+.work-description {
+    position: absolute;
+    top: 120px; /* 페이지 상단에서 100px 떨어진 위치 */
+    left: 20px; /* 왼쪽에서 20px 떨어진 위치 */
+    width: 20vw; /* 본문 너비 설정 */
+    padding: 0px;
+    box-sizing: border-box;
+    word-break: keep-all;
+    /* line-height 상속 */
+    line-height: inherit; /* ★ 정리 */
+}
+
+/* 첫 번째 이미지 */
+.main-image {
+    width: auto;
+    height: 36vw;
+    display: block;
+    margin-left: 20px; 
+    margin-bottom: 10px;
+}
+
+/* 이미지 갤러리 */
+.work-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; /* 모든 이미지 사이 간격을 10px로 설정 */
+    margin-left: 20px; /* 왼쪽 정렬 + 여백 유지 */
+}
+
+/* 개별 이미지 크기 */
+.half-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 뒤로가기 버튼 스타일 */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 17px;
+    width: 36px; /* 버튼 크기 */
+    height: 36px; /* 버튼 크기 */
+    background-color: white; /* 반투명 흰색 */
+    border-radius: 50%; /* 원형 버튼 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-decoration: none;
+    color: rgb(0, 85, 255);
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+    z-index: 9999;
+}
+
+/* 호버 시 색상 변경 */
+.back-button:hover {
+    background-color: rgb(0, 85, 255);
+    color: white;
+}
+
+#draggable {
+    width: 15vw;
+    height: 15vw;
+    position: absolute;
+    bottom: 50px;  /* 초기 위치 설정 */
+    left: 50px; /* 초기 위치 설정 */
+    cursor: grab;
+}
+
+#draggable:active {
+    cursor: grabbing;
+}
+
+/* 반응형: 모바일에서도 네비게이션 아래에서 시작 */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 15px; /* 기존 유지 */
+        /* line-height는 상속 그대로 (변경 X) */
+    }
+
+    nav {
+        top: 10px;
+        right: 10px;
+    }
+
+    .intro {
+        font-size: 15px;
+        word-break: keep-all;
+    }
+
+    .work-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        max-width: 100%;
+        margin-top: 100px; /* 모바일에서도 네비게이션 아래에서 시작 */
+    }
+    
+
+    .intro, .cv {
+        max-width: 90%;
+        margin: 50px 0 0 10px;
+    }
+}
