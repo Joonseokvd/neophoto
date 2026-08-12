@@ -225,6 +225,16 @@ nav ul li a:hover {
 }
 
 /* 호버 시 색상 변경 */
+.back-button svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
 .back-button:hover {
     background-color: rgb(0, 85, 255);
     color: white;
@@ -270,5 +280,37 @@ nav ul li a:hover {
     .intro, .cv {
         max-width: 90%;
         margin: 50px 0 0 10px;
+    }
+
+    .work-detail {
+        max-width: 100%;
+        padding: 80px 10px 40px;
+    }
+
+    .work-title {
+        position: static;
+        margin: 0 60px 20px 0;
+    }
+
+    .work-description {
+        position: static;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .main-image {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .work-gallery {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+    }
+
+    .back-button {
+        top: 10px;
+        left: 7px;
     }
 }
