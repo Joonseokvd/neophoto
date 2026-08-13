@@ -1032,3 +1032,276 @@ body,
         border: 0;
     }
 }
+
+
+/* === List, Picture, Region archive views === */
+.archive-index {
+    min-height: 100vh;
+    background: #f1f1ef;
+    color: #111;
+    font-family: 'Pretendard', Arial, Helvetica, sans-serif;
+}
+
+.archive-index .archive-main {
+    margin-right: 76px;
+    padding: 18px;
+}
+
+.archive-heading {
+    margin-bottom: 56px;
+}
+
+.archive-heading > p {
+    margin-bottom: 10px;
+    font-size: 11pt;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.archive-heading h1 {
+    margin: 0;
+    color: #111;
+    font-size: clamp(24px, 3.075vw, 52px);
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: 0;
+}
+
+.archive-index .archive-view-links a[aria-current="page"] {
+    font-weight: 800;
+}
+
+.project-list {
+    counter-reset: archive-project;
+}
+
+.project-list li {
+    counter-increment: archive-project;
+}
+
+.project-list a {
+    display: grid;
+    grid-template-columns: minmax(260px, 1.25fr) minmax(280px, 1fr) minmax(190px, .55fr);
+    gap: 24px;
+    padding: 9px 0;
+    color: #111;
+    text-decoration: none;
+}
+
+.project-list a::before {
+    content: counter(archive-project, decimal-leading-zero);
+    position: absolute;
+    font-size: 10px;
+    transform: translateY(-7px);
+}
+
+.project-list a:hover .project-name {
+    text-decoration: underline;
+}
+
+.project-name {
+    font-size: clamp(21px, 2.15vw, 36px);
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+.project-en,
+.project-meta {
+    align-self: end;
+    padding-bottom: .28em;
+    font-size: 11pt;
+    line-height: 1.3;
+}
+
+.picture-index {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: start;
+}
+
+.picture-card a {
+    display: block;
+    color: #111;
+    text-decoration: none;
+}
+
+.picture-card img {
+    display: block;
+    width: 100%;
+    height: min(48vw, 680px);
+    object-fit: cover;
+}
+
+.picture-info {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding-top: 0;
+    transition: max-height 220ms ease, opacity 160ms ease, padding-top 220ms ease;
+}
+
+.picture-card:hover .picture-info,
+.picture-card:focus-within .picture-info {
+    max-height: 150px;
+    padding-top: 8px;
+    opacity: 1;
+}
+
+.picture-info h2,
+.picture-info p {
+    margin: 0 0 2px;
+    color: #111;
+    font-size: 11pt;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.region-map {
+    position: relative;
+    min-height: 65vh;
+}
+
+.map-label {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.map-label h2,
+.map-label p {
+    margin: 0;
+    color: #111;
+    font-size: 11pt;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.region-map svg {
+    display: block;
+    width: min(100%, 920px);
+    height: 65vh;
+    min-height: 480px;
+    margin: 0 auto;
+}
+
+.korea-shape,
+.island-shape {
+    fill: #c8c8c5;
+}
+
+.region-halo {
+    fill: none;
+    stroke: #111;
+    stroke-width: 1;
+    stroke-dasharray: 3 4;
+}
+
+.region-dot {
+    fill: #111;
+}
+
+.region-map text {
+    fill: #111;
+    font-family: 'Pretendard', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.region-directory {
+    margin-top: 18px;
+    font-size: 11pt;
+}
+
+.region-directory header,
+.region-directory a {
+    display: grid;
+    grid-template-columns: .38fr 1.25fr .75fr;
+    gap: 18px;
+    padding: 5px 0;
+    color: #111;
+    text-decoration: none;
+}
+
+.region-directory header {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.region-directory a {
+    line-height: 1.3;
+}
+
+.region-directory a:hover span:nth-child(2) {
+    text-decoration: underline;
+}
+
+.region-source {
+    margin-top: 30px;
+    max-width: 620px;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+@media screen and (max-width: 768px) {
+    .archive-index .archive-main {
+        margin-right: 0;
+        margin-bottom: 48px;
+        padding: 10px;
+    }
+
+    .archive-heading {
+        margin-bottom: 34px;
+    }
+
+    .project-list a {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        padding: 12px 0;
+    }
+
+    .project-list a::before {
+        position: static;
+        transform: none;
+    }
+
+    .project-en,
+    .project-meta {
+        padding-bottom: 0;
+    }
+
+    .picture-index {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .picture-card img {
+        height: auto;
+    }
+
+    .picture-info {
+        max-height: none;
+        padding-top: 7px;
+        opacity: 1;
+    }
+
+    .region-map,
+    .region-map svg {
+        min-height: 430px;
+        height: 55vh;
+    }
+
+    .region-directory header {
+        display: none;
+    }
+
+    .region-directory a {
+        grid-template-columns: 52px 1fr;
+        gap: 7px;
+        padding: 8px 0;
+    }
+
+    .region-directory a span:last-child {
+        grid-column: 2;
+    }
+}
