@@ -1901,3 +1901,20 @@ body,
 .region-directory a:hover span:nth-child(2) {
     text-decoration-line: overline;
 }
+
+
+/* === Photorealistic filing fastener WebP === */
+.archive-list-page .filing-spine .filing-fastener-photo {
+    display: block;
+    width: 82px;
+    height: min(62vh, 520px);
+    object-fit: contain;
+    mix-blend-mode: screen;
+    filter: grayscale(1) contrast(.92);
+}
+@media screen and (max-width: 768px) {
+    .archive-list-page .filing-spine .filing-fastener-photo {
+        width: 44px;
+        height: 390px;
+    }
+}
