@@ -1569,3 +1569,181 @@ body,
         font-size: 9px;
     }
 }
+
+
+/* === Filing-sheet list view === */
+.archive-list-page .archive-heading {
+    margin-bottom: 18px;
+}
+.archive-list-page .filing-sheet {
+    display: grid;
+    grid-template-columns: 132px minmax(0, 1fr);
+    width: min(100%, 1180px);
+    min-height: 720px;
+    margin: 0 auto;
+    padding: 34px;
+    border-radius: 3px;
+    background: #e4e4df;
+    color: #111;
+}
+.archive-list-page .filing-spine {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding-right: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+.archive-list-page .filing-spine svg {
+    display: block;
+    width: 74px;
+    height: 520px;
+}
+.archive-list-page .clip-shadow {
+    fill: #8b8b87;
+}
+.archive-list-page .clip-body {
+    fill: #adada8;
+    stroke: #646460;
+    stroke-width: 2;
+}
+.archive-list-page .clip-slot {
+    fill: #777773;
+}
+.archive-list-page .clip-bridge {
+    fill: #73736f;
+    stroke: #555551;
+    stroke-width: 2;
+}
+.archive-list-page .clip-bridge-inner {
+    fill: #aaa9a4;
+}
+.archive-list-page .clip-rivet {
+    fill: #5e5e5a;
+}
+.archive-list-page .clip-highlight {
+    fill: none;
+    stroke: #d6d6d0;
+    stroke-width: 3;
+    stroke-linecap: round;
+    opacity: .75;
+}
+.archive-list-page .filing-spine > span {
+    color: #666;
+    font-size: 9px;
+    line-height: 1.25;
+    letter-spacing: .04em;
+    text-align: center;
+}
+.archive-list-page .filing-content {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+}
+.archive-list-page .filing-caption {
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    gap: 12px;
+    padding: 0 0 8px;
+    border-bottom: 1px solid #777;
+    color: #333;
+}
+.archive-list-page .filing-caption span {
+    font-size: 10px;
+    line-height: 1;
+}
+.archive-list-page .project-list {
+    counter-reset: none;
+}
+.archive-list-page .project-list li {
+    counter-increment: none;
+}
+.archive-list-page .project-list a {
+    position: static;
+    display: grid;
+    grid-template-columns: 34px minmax(220px, .9fr) minmax(300px, 1.2fr) 110px;
+    gap: 12px;
+    padding: 8px 0 7px;
+    align-items: baseline;
+    border-bottom: 1px solid #9a9a95;
+    color: #111;
+    text-decoration: none;
+}
+.archive-list-page .project-list a::before {
+    content: none;
+}
+.archive-list-page .record-number,
+.archive-list-page .project-name,
+.archive-list-page .project-en,
+.archive-list-page .project-meta {
+    padding: 0;
+    color: #111;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.archive-list-page .project-name {
+    font-size: 12px;
+    font-weight: 500;
+}
+.archive-list-page .project-meta {
+    justify-self: end;
+    white-space: nowrap;
+}
+.archive-list-page .project-list a:hover {
+    background: rgba(0, 0, 0, .045);
+}
+.archive-list-page .project-list a:hover .project-name {
+    text-decoration: none;
+}
+.archive-list-page .filing-footer {
+    margin-top: auto;
+    padding-top: 24px;
+    color: #444;
+    font-size: 10px;
+    line-height: 1.2;
+}
+@media screen and (max-width: 768px) {
+    .archive-list-page .filing-sheet {
+        grid-template-columns: 58px minmax(0, 1fr);
+        min-height: 620px;
+        padding: 16px;
+    }
+    .archive-list-page .filing-spine {
+        padding-right: 12px;
+    }
+    .archive-list-page .filing-spine svg {
+        width: 42px;
+        height: 390px;
+    }
+    .archive-list-page .filing-spine > span {
+        font-size: 7px;
+    }
+    .archive-list-page .filing-caption {
+        grid-template-columns: 42px 1fr;
+    }
+    .archive-list-page .filing-caption span:last-child {
+        display: none;
+    }
+    .archive-list-page .project-list a {
+        grid-template-columns: 24px minmax(0, 1fr);
+        gap: 7px;
+        padding: 9px 0;
+    }
+    .archive-list-page .project-en,
+    .archive-list-page .project-meta {
+        grid-column: 2;
+    }
+    .archive-list-page .record-number,
+    .archive-list-page .project-name,
+    .archive-list-page .project-en,
+    .archive-list-page .project-meta {
+        font-size: 8px;
+    }
+    .archive-list-page .project-name {
+        font-size: 10px;
+    }
+    .archive-list-page .project-meta {
+        justify-self: start;
+    }
+}
