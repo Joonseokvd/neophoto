@@ -1916,3 +1916,20 @@ body,
         height: 390px;
     }
 }
+
+
+/* === Lock filing fastener to viewport vertical center === */
+.archive-list-page .filing-spine .filing-fastener-photo {
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 43px;
+    transform: translateY(-50%);
+}
+@media screen and (max-width: 768px) {
+    .archive-list-page .filing-spine .filing-fastener-photo {
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+    }
+}
