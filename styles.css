@@ -908,3 +908,69 @@ nav ul li a:hover {
         margin-bottom: 48px;
     }
 }
+
+
+/* === Unified detail title scale and compact lead layout === */
+.detail-editorial .detail-header {
+    min-height: auto;
+    display: block;
+}
+
+.detail-editorial .work-title {
+    max-width: none;
+    margin-bottom: 28px;
+    font-family: 'Pretendard', Arial, Helvetica, sans-serif;
+    font-size: clamp(24px, 3.075vw, 52px);
+    font-weight: 900;
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+
+.detail-editorial .detail-copy {
+    align-self: auto;
+    align-items: start;
+}
+
+.detail-editorial .detail-secondary {
+    gap: 18px;
+    align-content: start;
+}
+
+.detail-editorial .detail-english {
+    font-size: 11pt;
+    line-height: 1.38;
+}
+
+.detail-editorial .detail-secondary .detail-hero {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+.detail-editorial .detail-secondary .detail-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+}
+
+.detail-editorial .detail-header + .work-gallery {
+    margin-top: 18px;
+}
+
+@media screen and (max-width: 768px) {
+    .detail-editorial .work-title {
+        font-size: clamp(22px, 5.3vw, 27px);
+        line-height: 1.5;
+        letter-spacing: 0;
+    }
+
+    .detail-editorial .detail-english {
+        font-size: 11pt;
+    }
+
+    .detail-editorial .detail-secondary .detail-hero {
+        margin: 0;
+    }
+}
