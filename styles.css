@@ -1933,3 +1933,22 @@ body,
         transform: translateY(-50%);
     }
 }
+
+
+/* === Bilingual archive navigation scale === */
+.side-navigation .side-links a,
+.landing-page .side-navigation .side-links a,
+.work-page .side-navigation .side-links a,
+.detail-editorial .side-navigation .side-links a,
+.archive-index .side-navigation .side-links a {
+    font-size: 13pt;
+}
+@media screen and (max-width: 768px) {
+    .side-navigation .side-links a,
+    .landing-page .side-navigation .side-links a,
+    .work-page .side-navigation .side-links a,
+    .detail-editorial .side-navigation .side-links a,
+    .archive-index .side-navigation .side-links a {
+        font-size: 13pt;
+    }
+}
