@@ -1747,3 +1747,131 @@ body,
         justify-self: start;
     }
 }
+
+
+/* === Clean archive views: no repeated page titles === */
+.archive-list-page .archive-main,
+.archive-picture-page .archive-main,
+.archive-region-page .archive-main {
+    padding-top: 76px;
+}
+
+/* List: direct-on-background index */
+.archive-list-page .filing-sheet {
+    display: grid;
+    grid-template-columns: 132px minmax(0, 1fr);
+    width: 100%;
+    min-height: calc(100vh - 94px);
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+}
+.archive-list-page .filing-spine {
+    padding: 0 30px 0 0;
+}
+.archive-list-page .filing-spine svg {
+    height: min(62vh, 520px);
+}
+.archive-list-page .filing-content {
+    padding: 0;
+}
+.archive-list-page .project-list a {
+    grid-template-columns: 38px minmax(220px, .9fr) minmax(300px, 1.2fr) 110px;
+    padding: 9px 0 8px;
+    border-bottom: 1px solid #aaa;
+}
+.archive-list-page .record-number,
+.archive-list-page .project-name,
+.archive-list-page .project-en,
+.archive-list-page .project-meta {
+    font-size: 11pt;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.archive-list-page .project-meta {
+    justify-self: end;
+}
+
+/* Picture: four columns at full-screen width */
+.archive-picture-page .picture-index {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+.archive-picture-page .picture-card img {
+    width: 100%;
+    height: min(31vw, 520px);
+    object-fit: cover;
+}
+
+/* Map: graphic directly on the page background */
+.archive-region-page .region-panel {
+    min-height: calc(100vh - 94px);
+    overflow: visible;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+}
+.archive-region-page .region-map svg {
+    width: min(100%, 760px);
+    height: calc(100vh - 130px);
+    min-height: 570px;
+    margin: 0 auto;
+}
+.archive-region-page .map-orbit {
+    fill: #d8d8d3;
+}
+.archive-region-page .region-legend {
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 1100px) and (min-width: 769px) {
+    .archive-picture-page .picture-index {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+@media screen and (max-width: 768px) {
+    .archive-list-page .archive-main,
+    .archive-picture-page .archive-main,
+    .archive-region-page .archive-main {
+        padding-top: 66px;
+    }
+    .archive-list-page .filing-sheet {
+        grid-template-columns: 54px minmax(0, 1fr);
+        min-height: calc(100vh - 76px);
+        padding: 0;
+    }
+    .archive-list-page .filing-spine {
+        padding-right: 10px;
+    }
+    .archive-list-page .record-number,
+    .archive-list-page .project-name,
+    .archive-list-page .project-en,
+    .archive-list-page .project-meta {
+        font-size: 11pt;
+    }
+    .archive-picture-page .picture-index {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+    .archive-picture-page .picture-card img {
+        height: 58vw;
+    }
+    .archive-region-page .region-panel {
+        min-height: calc(100vh - 76px);
+        padding: 0;
+        border-radius: 0;
+    }
+    .archive-region-page .region-map svg {
+        height: calc(100vh - 110px);
+        min-height: 500px;
+        margin: 0 auto;
+    }
+    .archive-region-page .region-legend {
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
