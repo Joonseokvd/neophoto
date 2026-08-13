@@ -355,6 +355,9 @@ nav ul li a:hover {
 .landing-statement > span,
 .landing-statement > .inline-work {
     display: inline;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
     vertical-align: baseline;
 }
 
