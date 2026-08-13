@@ -22,7 +22,7 @@ body {
     font-weight: 400;
     font-size: 16px;
     color: gray;
-    background-color: white;
+    background-color: #f9f9f9;
     line-height: 1.4;
     word-break: break-word;
     text-align: left;
@@ -211,7 +211,7 @@ nav ul li a:hover {
     left: 17px;
     width: 36px; /* 버튼 크기 */
     height: 36px; /* 버튼 크기 */
-    background-color: white; /* 반투명 흰색 */
+    background-color: #f9f9f9; /* 반투명 흰색 */
     border-radius: 50%; /* 원형 버튼 */
     display: flex;
     justify-content: center;
@@ -321,7 +321,7 @@ nav ul li a:hover {
     min-height: 100vh;
     margin: 0;
     overflow-x: hidden;
-    background: #fff;
+    background: #f9f9f9;
     color: #111;
     font-family: 'Pretendard', Arial, Helvetica, sans-serif;
 }
@@ -329,7 +329,7 @@ nav ul li a:hover {
 .landing-page .fixed-nav {
     z-index: 1000;
     padding: 4px 6px;
-    background: rgba(255, 255, 255, 0.92);
+    background: #f9f9f9;
     color: #111;
     backdrop-filter: blur(4px);
 }
@@ -1372,7 +1372,7 @@ body,
     padding: 0 18px;
     align-items: center;
     border: 0;
-    background: rgba(241, 241, 239, .94);
+    background: #f9f9f9;
     color: #111;
     writing-mode: horizontal-tb;
     backdrop-filter: blur(8px);
@@ -1951,4 +1951,23 @@ body,
     .archive-index .side-navigation .side-links a {
         font-size: 13pt;
     }
+}
+
+
+/* === Unified 13pt brand and #f9f9f9 page surfaces === */
+.side-navigation .side-brand,
+.landing-page .side-navigation .side-brand,
+.work-page .side-navigation .side-brand,
+.detail-editorial .side-navigation .side-brand,
+.archive-index .side-navigation .side-brand {
+    font-size: 13pt;
+}
+html,
+body,
+.landing-page,
+.work-page,
+.detail-editorial,
+.archive-index,
+.side-navigation {
+    background-color: #f9f9f9;
 }
