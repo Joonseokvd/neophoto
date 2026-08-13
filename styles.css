@@ -974,3 +974,9 @@ nav ul li a:hover {
         margin: 0;
     }
 }
+
+
+/* Korean detail body leading */
+.detail-editorial .work-description {
+    line-height: 1.5;
+}
