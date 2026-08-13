@@ -708,7 +708,7 @@ nav ul li a:hover {
     display: inline-block;
     overflow: hidden;
     margin: 0 0.08em;
-    background: #C6FF02;
+    background: #77ff00;
     font-size: inherit;
     line-height: 1;
     vertical-align: -0.36em;
@@ -1888,7 +1888,7 @@ body,
 .picture-card a:hover .picture-info p,
 .region-directory a:hover strong,
 .region-directory a:hover span {
-    color: #C6FF02;
+    color: #77ff00;
     text-decoration: overline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0;
