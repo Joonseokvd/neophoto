@@ -686,3 +686,112 @@ nav ul li a:hover {
         height: auto;
     }
 }
+
+
+/* === Landing scale, black type and fluorescent halftone === */
+.landing-page .landing-collage {
+    padding-right: 112px;
+}
+
+.landing-page .landing-statement {
+    width: 50%;
+    max-width: 50%;
+    font-family: 'Pretendard', Arial, Helvetica, sans-serif;
+    font-size: clamp(24px, 3.075vw, 52px);
+    font-weight: 900;
+    line-height: 1.5;
+    letter-spacing: -0.055em;
+}
+
+.landing-page .landing-statement > .inline-work {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 0.08em;
+    background: #C6FF02;
+    font-size: inherit;
+    line-height: 1;
+    vertical-align: -0.36em;
+    isolation: isolate;
+}
+
+.landing-page .inline-work::after {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(8, 8, 8, 0.92) 0 1px, transparent 1.15px);
+    background-position: 0 0;
+    background-size: 4px 4px;
+    mix-blend-mode: multiply;
+    opacity: 0.62;
+    transition: opacity 180ms ease;
+}
+
+.landing-page .inline-work img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 1.32em;
+    object-fit: cover;
+    opacity: 0.73;
+    filter: grayscale(1) contrast(1.65) brightness(1.08);
+    mix-blend-mode: multiply;
+    transform: none;
+    transition: filter 180ms ease, opacity 180ms ease, transform 180ms ease;
+}
+
+.landing-page .work-one img { width: 2.1em; }
+.landing-page .work-two img { width: 2.45em; }
+.landing-page .work-three img { width: 1.8em; }
+.landing-page .work-four img { width: 2.35em; }
+.landing-page .work-five img { width: 2.05em; }
+
+.landing-page .inline-work:hover,
+.landing-page .inline-work:focus-visible {
+    background: transparent;
+    outline: none;
+}
+
+.landing-page .inline-work:hover::after,
+.landing-page .inline-work:focus-visible::after {
+    opacity: 0;
+}
+
+.landing-page .inline-work:hover img,
+.landing-page .inline-work:focus-visible img {
+    filter: none;
+    opacity: 1;
+    mix-blend-mode: normal;
+    transform: none;
+}
+
+@media screen and (max-width: 768px) {
+    .landing-page .landing-collage {
+        padding: 68px 10px 18px;
+    }
+
+    .landing-page .landing-statement {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(22px, 5.3vw, 27px);
+        line-height: 1.5;
+    }
+
+    .landing-page .inline-work img {
+        height: 1.28em;
+    }
+}
+
+@media (hover: none) {
+    .landing-page .inline-work:active::after {
+        opacity: 0;
+    }
+
+    .landing-page .inline-work:active img {
+        filter: none;
+        opacity: 1;
+        mix-blend-mode: normal;
+    }
+}
