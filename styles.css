@@ -1909,8 +1909,6 @@ body,
     width: 82px;
     height: min(62vh, 520px);
     object-fit: contain;
-    mix-blend-mode: screen;
-    filter: grayscale(1) contrast(.92);
 }
 @media screen and (max-width: 768px) {
     .archive-list-page .filing-spine .filing-fastener-photo {
