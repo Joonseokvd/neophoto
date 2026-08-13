@@ -1971,3 +1971,89 @@ body,
 .side-navigation {
     background-color: #f9f9f9;
 }
+
+
+/* === Contact-sheet picture archive === */
+.archive-picture-page .archive-main {
+    padding: 78px 24px 60px;
+}
+.archive-picture-page .picture-index {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 34px 26px;
+    align-items: start;
+}
+.archive-picture-page .picture-card {
+    min-width: 0;
+}
+.archive-picture-page .picture-card a {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    align-items: start;
+    color: #111;
+    text-decoration: none;
+}
+.archive-picture-page .picture-number {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 1px;
+    color: #111;
+    font-size: 10pt;
+    font-weight: 600;
+    line-height: 1;
+}
+.archive-picture-page .picture-card img {
+    grid-column: 2;
+    grid-row: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: top left;
+}
+.archive-picture-page .picture-card:nth-child(2) img {
+    width: 90%;
+}
+.archive-picture-page .picture-card:nth-child(3) img {
+    width: 78%;
+    justify-self: center;
+}
+.archive-picture-page .picture-card:nth-child(4) img {
+    width: 94%;
+    justify-self: end;
+}
+.archive-picture-page .picture-card:nth-child(5) img {
+    width: 72%;
+    justify-self: start;
+}
+.archive-picture-page .picture-info {
+    grid-column: 2;
+    width: 100%;
+}
+@media screen and (max-width: 1100px) and (min-width: 769px) {
+    .archive-picture-page .picture-index {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+@media screen and (max-width: 768px) {
+    .archive-picture-page .archive-main {
+        padding: 68px 10px 36px;
+    }
+    .archive-picture-page .picture-index {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 12px;
+    }
+    .archive-picture-page .picture-card a {
+        grid-template-columns: 20px minmax(0, 1fr);
+    }
+    .archive-picture-page .picture-number {
+        font-size: 8pt;
+    }
+    .archive-picture-page .picture-card img,
+    .archive-picture-page .picture-card:nth-child(n) img {
+        width: 100%;
+        height: auto;
+        justify-self: stretch;
+    }
+}
