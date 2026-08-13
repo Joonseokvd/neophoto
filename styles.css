@@ -1875,3 +1875,29 @@ body,
         left: 0;
     }
 }
+
+
+/* === Fluorescent green hover and overline language === */
+.side-navigation .side-links a:hover,
+.side-navigation .side-brand:hover,
+.project-list a:hover .project-name,
+.project-list a:hover .project-en,
+.project-list a:hover .project-meta,
+.project-list a:hover .record-number,
+.picture-card a:hover .picture-info h2,
+.picture-card a:hover .picture-info p,
+.region-directory a:hover strong,
+.region-directory a:hover span {
+    color: #C6FF02;
+    text-decoration: overline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0;
+}
+.side-navigation .side-links a:hover,
+.side-navigation .side-brand:hover {
+    text-underline-offset: 0;
+}
+.project-list a:hover .project-name,
+.region-directory a:hover span:nth-child(2) {
+    text-decoration-line: overline;
+}
