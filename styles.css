@@ -1305,3 +1305,49 @@ body,
         grid-column: 2;
     }
 }
+
+
+/* === Korea region map correction === */
+.archive-region-page .region-map {
+    min-height: 70vh;
+}
+.archive-region-page .region-map svg {
+    width: min(100%, 760px);
+    height: 70vh;
+    min-height: 560px;
+}
+.archive-region-page .korea-shape,
+.archive-region-page .island-shape,
+.archive-region-page .islet-shape {
+    fill: #c8c8c5;
+    stroke: #111;
+    stroke-width: 1.15;
+    stroke-linejoin: round;
+}
+.archive-region-page .map-city path {
+    fill: none;
+    stroke: #111;
+    stroke-width: 1;
+}
+.archive-region-page .map-city-reference circle {
+    fill: #f1f1ef;
+    stroke: #111;
+    stroke-width: 1.5;
+}
+.archive-region-page .map-city-active text:first-of-type,
+.archive-region-page .map-city-reference text:first-of-type {
+    font-size: 15px;
+    font-weight: 600;
+}
+.archive-region-page .sea-label,
+.archive-region-page .island-label {
+    fill: #777;
+    font-size: 11px;
+}
+@media screen and (max-width: 768px) {
+    .archive-region-page .region-map,
+    .archive-region-page .region-map svg {
+        min-height: 500px;
+        height: 62vh;
+    }
+}
