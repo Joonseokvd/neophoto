@@ -2565,3 +2565,97 @@ body .side-navigation .side-links a[aria-current="page"] {
     height: 58px !important;
   }
 }
+
+
+/* === True stacked folder layers: each later file covers the previous === */
+body .side-navigation {
+  position: fixed !important;
+  display: block !important;
+  height: 64px !important;
+  overflow: hidden !important;
+  background: #111 !important;
+}
+body .side-navigation .side-links {
+  display: contents !important;
+}
+body .side-navigation .side-brand,
+body .side-navigation .side-links a {
+  --folder-left: 0px;
+  position: absolute !important;
+  left: var(--folder-left) !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  display: block !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: 64px !important;
+  margin: 0 !important;
+  padding: 24px calc(100% - 224px) 0 0 !important;
+  box-sizing: border-box !important;
+  border: 0 !important;
+  background: none !important;
+  text-align: center !important;
+  transform: none !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+}
+body .side-navigation .side-brand { --folder-left: 0px; z-index: 1 !important; }
+body .side-navigation .side-links a:nth-child(1) { --folder-left: 200px; z-index: 2 !important; }
+body .side-navigation .side-links a:nth-child(2) { --folder-left: 400px; z-index: 3 !important; }
+body .side-navigation .side-links a:nth-child(3) { --folder-left: 600px; z-index: 4 !important; }
+
+/* The projecting index: one uninterrupted, tangent curve. */
+body .side-navigation .side-brand::before,
+body .side-navigation .side-links a::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  top: 0 !important;
+  left: 0 !important;
+  display: block !important;
+  width: 224px !important;
+  height: 53px !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 224 53'%3E%3Cpath d='M0 52 C12 52 15 48 20 35 C26 14 40 5 62 5 H158 C181 5 193 13 199 34 C204 48 210 52 224 52 L224 53 L0 53 Z' fill='%23f9f9f9'/%3E%3Cpath d='M0 52 C12 52 15 48 20 35 C26 14 40 5 62 5 H158 C181 5 193 13 199 34 C204 48 210 52 224 52' fill='none' stroke='%23111' stroke-width='1.2'/%3E%3C/svg%3E") no-repeat 0 0 / 224px 53px !important;
+  pointer-events: none !important;
+}
+/* The folder body continues to the right. Only the topmost layer remains visible. */
+body .side-navigation .side-brand::after,
+body .side-navigation .side-links a::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: -2 !important;
+  top: 52px !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  display: block !important;
+  background: #f9f9f9 !important;
+  border-top: 1px solid #111 !important;
+  pointer-events: none !important;
+}
+@media screen and (max-width: 768px) {
+  body .side-navigation,
+  body .side-navigation .side-brand,
+  body .side-navigation .side-links a {
+    height: 58px !important;
+  }
+  body .side-navigation .side-brand,
+  body .side-navigation .side-links a {
+    --tab-width: calc(25vw + 12px);
+    padding: 23px calc(100% - var(--tab-width)) 0 0 !important;
+    font-size: 9.5pt !important;
+  }
+  body .side-navigation .side-links a:nth-child(1) { --folder-left: 25vw; }
+  body .side-navigation .side-links a:nth-child(2) { --folder-left: 50vw; }
+  body .side-navigation .side-links a:nth-child(3) { --folder-left: 75vw; }
+  body .side-navigation .side-brand::before,
+  body .side-navigation .side-links a::before {
+    width: var(--tab-width) !important;
+    height: 49px !important;
+    background-size: 100% 49px !important;
+  }
+  body .side-navigation .side-brand::after,
+  body .side-navigation .side-links a::after {
+    top: 48px !important;
+  }
+}
