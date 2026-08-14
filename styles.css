@@ -2504,7 +2504,7 @@ body .side-navigation .side-links a {
   border: 0 !important;
   border-radius: 0 !important;
   background-color: transparent !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 224 64' preserveAspectRatio='none'%3E%3Cpath d='M0 64V51C11 51 15 47 19 34C25 13 39 4 62 4H160C183 4 194 12 200 33C204 47 211 51 224 51V64Z' fill='%23f9f9f9' stroke='%23111' stroke-width='1.2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 224 64' preserveAspectRatio='none'%3E%3Cpath d='M0 52 C12 52 15 48 20 35 C26 14 40 5 62 5 H158 C181 5 193 13 199 34 C204 48 210 52 224 52 L224 64 L0 64 Z' fill='%23f9f9f9'/%3E%3Cpath d='M0 52 C12 52 15 48 20 35 C26 14 40 5 62 5 H158 C181 5 193 13 199 34 C204 48 210 52 224 52' fill='none' stroke='%23111' stroke-width='1.2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") !important;
   background-repeat: no-repeat !important;
   background-position: 0 0 !important;
   background-size: 100% 100% !important;
