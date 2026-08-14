@@ -2252,3 +2252,16 @@ body,
         font-size: 10pt;
     }
 }
+
+
+/* === Timeline rows use rules, not text overlines === */
+.archive-list-page .project-list a:hover .record-number,
+.archive-list-page .project-list a:hover .project-name,
+.archive-list-page .project-list a:hover .project-en,
+.archive-list-page .project-list a:hover .project-meta,
+.archive-list-page .project-list a:focus-visible .record-number,
+.archive-list-page .project-list a:focus-visible .project-name,
+.archive-list-page .project-list a:focus-visible .project-en,
+.archive-list-page .project-list a:focus-visible .project-meta {
+    text-decoration: none;
+}
