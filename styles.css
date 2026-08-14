@@ -2265,3 +2265,70 @@ body,
 .archive-list-page .project-list a:focus-visible .project-meta {
     text-decoration: none;
 }
+
+
+/* === Four file-index navigation tabs === */
+.side-navigation {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+  gap: 0;
+  width: 100%;
+  height: 78px;
+  padding: 0;
+  background: #111;
+  backdrop-filter: none;
+}
+.side-navigation .side-links { display: contents; }
+.side-navigation .side-brand,
+.side-navigation .side-links a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: stretch;
+  width: 100%;
+  height: 58px;
+  margin: 0;
+  padding: 0 12px 2px;
+  border: 1px solid #111;
+  border-bottom: 0;
+  border-radius: 30px 30px 0 0;
+  background: #f9f9f9;
+  color: #111;
+  font-size: 13pt;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+}
+.side-navigation .side-brand { grid-column: 1; }
+.side-navigation .side-links a:nth-child(1) { grid-column: 2; }
+.side-navigation .side-links a:nth-child(2) { grid-column: 3; }
+.side-navigation .side-links a:nth-child(3) { grid-column: 4; }
+.side-navigation .side-brand:hover,
+.side-navigation .side-links a:hover { background: #f9f9f9; }
+.side-navigation .side-links a[aria-current="page"] {
+  height: 64px;
+  font-weight: 600;
+}
+.landing-page .landing-collage,
+.work-page main,
+.detail-editorial .work-detail,
+.archive-index .archive-main { padding-top: 96px; }
+
+@media screen and (max-width: 768px) {
+  .side-navigation { height: 68px; background: #111; }
+  .side-navigation .side-brand,
+  .side-navigation .side-links a {
+    height: 50px;
+    padding: 0 4px 1px;
+    border-radius: 22px 22px 0 0;
+    font-size: 11pt;
+  }
+  .side-navigation .side-links a[aria-current="page"] { height: 56px; }
+  .landing-page .landing-collage,
+  .work-page main,
+  .detail-editorial .work-detail,
+  .archive-index .archive-main { padding-top: 82px; }
+}
