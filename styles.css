@@ -2094,3 +2094,10 @@ body,
         object-fit: cover;
     }
 }
+
+
+/* === Timeline hover: no dark row background === */
+.archive-list-page .project-list a:hover,
+.archive-list-page .project-list a:focus-visible {
+    background: transparent;
+}
