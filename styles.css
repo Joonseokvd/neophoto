@@ -2694,3 +2694,34 @@ body .side-navigation .side-links a:nth-child(3) { width: calc(100vw - 600px) !i
   body .side-navigation .side-links a:nth-child(2) { width: 50vw !important; }
   body .side-navigation .side-links a:nth-child(3) { width: 25vw !important; }
 }
+
+
+/* === Labels are independent from folder-body geometry === */
+body .side-navigation .side-brand,
+body .side-navigation .side-links a {
+  padding: 0 !important;
+  font-size: 0 !important;
+}
+body .side-navigation .side-brand > span,
+body .side-navigation .side-links a > span {
+  position: absolute;
+  z-index: 2;
+  top: 24px;
+  left: 0;
+  display: block;
+  width: 224px;
+  color: #111;
+  font-size: 13pt;
+  font-weight: inherit;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+@media screen and (max-width: 768px) {
+  body .side-navigation .side-brand > span,
+  body .side-navigation .side-links a > span {
+    top: 23px;
+    width: var(--tab-width);
+    font-size: 9.5pt;
+  }
+}
