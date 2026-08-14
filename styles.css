@@ -2332,3 +2332,30 @@ body,
   .detail-editorial .work-detail,
   .archive-index .archive-main { padding-top: 82px; }
 }
+
+
+/* === Compact left-aligned folder tabs === */
+.side-navigation {
+  grid-template-columns: repeat(4, minmax(170px, 190px)) 1fr;
+  justify-content: start;
+}
+.side-navigation .side-brand,
+.side-navigation .side-links a {
+  height: 42px;
+  border-radius: 38px 38px 0 0;
+  padding-bottom: 0;
+}
+.side-navigation .side-links a[aria-current="page"] { height: 46px; }
+
+@media screen and (max-width: 768px) {
+  .side-navigation {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .side-navigation .side-brand,
+  .side-navigation .side-links a {
+    height: 42px;
+    border-radius: 22px 22px 0 0;
+    font-size: 9.5pt;
+  }
+  .side-navigation .side-links a[aria-current="page"] { height: 46px; }
+}
