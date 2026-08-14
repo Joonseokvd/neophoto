@@ -2402,3 +2402,67 @@ body .side-navigation .side-links a[aria-current="page"] { height: 46px !importa
     font-size: 9.5pt !important;
   }
 }
+
+
+/* === File-index contour and dividers === */
+body .side-navigation {
+  height: 60px !important;
+  border-bottom: 1px solid #111 !important;
+  overflow: visible !important;
+}
+body .side-navigation .side-links {
+  height: 100% !important;
+}
+body .side-navigation .side-brand,
+body .side-navigation .side-links a {
+  position: relative !important;
+  align-self: flex-end !important;
+  box-sizing: border-box !important;
+  height: 41px !important;
+  padding: 1px 18px 0 !important;
+  border: 1px solid #111 !important;
+  border-bottom: 0 !important;
+  border-radius: 30px 30px 0 0 / 15px 15px 0 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+body .side-navigation .side-brand + .side-links a,
+body .side-navigation .side-links a + a {
+  margin-left: -1px !important;
+}
+/* Crisp filing-card separators, independent of the curved shoulders. */
+body .side-navigation .side-brand::after,
+body .side-navigation .side-links a::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 3 !important;
+  top: 15px !important;
+  right: -1px !important;
+  bottom: 0 !important;
+  width: 1px !important;
+  background: #111 !important;
+  pointer-events: none !important;
+}
+body .side-navigation .side-links a:last-child::after {
+  display: none !important;
+}
+body .side-navigation .side-links a[aria-current="page"] {
+  height: 45px !important;
+  border-radius: 30px 30px 0 0 / 15px 15px 0 0 !important;
+}
+@media screen and (max-width: 768px) {
+  body .side-navigation .side-brand,
+  body .side-navigation .side-links a {
+    height: 41px !important;
+    padding-inline: 4px !important;
+    border-radius: 18px 18px 0 0 / 10px 10px 0 0 !important;
+  }
+  body .side-navigation .side-links a[aria-current="page"] {
+    height: 45px !important;
+    border-radius: 18px 18px 0 0 / 10px 10px 0 0 !important;
+  }
+  body .side-navigation .side-brand::after,
+  body .side-navigation .side-links a::after {
+    top: 10px !important;
+  }
+}
