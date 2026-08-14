@@ -2659,3 +2659,25 @@ body .side-navigation .side-links a::after {
     top: 48px !important;
   }
 }
+
+
+/* === Remove legacy offsets from stacked folder layers === */
+body .side-navigation .side-brand,
+body .side-navigation .side-links a,
+body .side-navigation .side-links a:nth-child(1),
+body .side-navigation .side-links a:nth-child(2),
+body .side-navigation .side-links a:nth-child(3) {
+  right: auto !important;
+  width: calc(100vw - var(--folder-left)) !important;
+  margin-left: 0 !important;
+}
+@media screen and (max-width: 768px) {
+  body .side-navigation .side-brand,
+  body .side-navigation .side-links a,
+  body .side-navigation .side-links a:nth-child(1),
+  body .side-navigation .side-links a:nth-child(2),
+  body .side-navigation .side-links a:nth-child(3) {
+    width: calc(100vw - var(--folder-left)) !important;
+    margin-left: 0 !important;
+  }
+}
