@@ -2681,3 +2681,16 @@ body .side-navigation .side-links a:nth-child(3) {
     margin-left: 0 !important;
   }
 }
+
+
+/* === Explicit viewport widths for every stacked file === */
+body .side-navigation .side-brand { width: 100vw !important; }
+body .side-navigation .side-links a:nth-child(1) { width: calc(100vw - 200px) !important; }
+body .side-navigation .side-links a:nth-child(2) { width: calc(100vw - 400px) !important; }
+body .side-navigation .side-links a:nth-child(3) { width: calc(100vw - 600px) !important; }
+@media screen and (max-width: 768px) {
+  body .side-navigation .side-brand { width: 100vw !important; }
+  body .side-navigation .side-links a:nth-child(1) { width: 75vw !important; }
+  body .side-navigation .side-links a:nth-child(2) { width: 50vw !important; }
+  body .side-navigation .side-links a:nth-child(3) { width: 25vw !important; }
+}
